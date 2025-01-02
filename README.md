@@ -1,7 +1,15 @@
-## Overview
-Official Codebase for Pop-Diffuseq: A Controllable and Efficiency Method for Musical Accompaniment Generation with Long-Axis Attention
+## NEWS
+### AIGC platform
+We developed an AIGC platform based on this project!
 
-The main function is controllable and interactive symbolic(MIDI) music generation.
+Welcome to the AI Music Generation test website:
+
+http://www.rhythmelec.com/
+
+## Overview
+Official Codebase for POP-DIFFUSEQ: CONTROLLABLE SYMBOLIC MUSIC MULTI-INSTRUMENT INFILLING AND ACCOMPANIMENT GENERATION WITH LONG-AXIS ATTENTION
+
+The main function is controllable and interactive symbolic(MIDI) music infilling and generation.
 The input and output of Pop-Diffuseq are:
 
 <p align = "center">
@@ -23,9 +31,7 @@ The framework and diffusion process of Pop-Diffuseq.
 The trained models, datasets and all unfiltered samples can be downloaded in Google Drive:
 https://drive.google.com/drive/folders/1OWI_sfYmYn2gB13KccO9kkXCP2x8Z-1x?usp=drive_link
 
-Please download from Google Drive as the file is too large.
-
-Due to the high economic cost of our self-built data set MidiPopBand3k, 
+Due to the high economic cost of our self-built data set PopBand3k, 
 we only disclosed part of the data demonstration during the review stage. 
 Once the paper is accepted, we will release all the data for free immediately.
 
@@ -48,6 +54,10 @@ The diffusion process of our conditional framework.
 <p align = "center">
 computational process of long-axis attention
 </p>
+
+The technical supplement is as follows:
+
+https://github.com/musicai-cakecake/pop-diffuseq
 
 ## Objective evaluation:
 Model setting:
@@ -83,6 +93,15 @@ The code is based on PyTorch and HuggingFace `transformers`.
 ```bash 
 pip install -r requirements.txt
 ```
+## Preprocessing
+
+midi preprocessing: music-representation/lmd_accom_preprocessing.py
+
+midi to token(representation): music-representation/accompaniment_generate_representation_lmd.py
+
+token to midi: music-representation/sequence_to_midi_lmd.py
+
+chord extract: music-representation/chords_detector
 
 ## DiffuSeq Training
 ```bash
@@ -103,9 +122,8 @@ Arguments explanation:
 - ```--use_fp16```: set whether to use mixed precision training
 - ```--denoise_rate```: set the denoise rate, with 0.5 as the default
 
-## Speed-up Decoding
-We customize the implementation of [DPM-Solver++](https://github.com/LuChengTHU/dpm-solver) to DiffuSeq to accelerate its sampling speed.
 ```bash
 cd scripts
 bash run_decode_solver.sh
 ```
+

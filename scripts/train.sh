@@ -1,0 +1,22 @@
+WANDB_PROJECT=MusicDiffuseq-V2-accom-lmd-acmmm \
+CUDA_VISIBLE_DEVICES=4,5 python -m torch.distributed.launch --nproc_per_node=2 --master_port=12231 --use_env run_train.py \
+--config_name ./diffuseq/bert-model-config/config.json \
+--diff_steps 2000 \
+--lr 0.0001 \
+--learning_steps 50000 \
+--save_interval 5000 \
+--seed 102 \
+--noise_schedule sqrt \
+--hidden_dim 128 \
+--bsz 160 \
+--microbatch 40 \
+--dataset lmd \
+--data_dir ./datasets/lmd \
+--learned_mean_embed True \
+--denoise True \
+--vocab vocab_lmd.txt \
+--seq_len 512 \
+--use_fp16 \
+--denoise_rate 0.5 \
+--schedule_sampler lossaware \
+--notes MusicDiffuseq-V2-ACMMM-2403

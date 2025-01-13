@@ -6,6 +6,10 @@ Welcome to the AI Music Generation test website:
 
 http://www.rhythmelec.com/
 
+The supplement is as follows:
+
+https://github.com/musicai-cakecake/pop-diffuseq
+
 ## Overview
 Official Codebase for POP-DIFFUSEQ: CONTROLLABLE SYMBOLIC MUSIC MULTI-INSTRUMENT INFILLING AND ACCOMPANIMENT GENERATION WITH LONG-AXIS ATTENTION
 
@@ -54,10 +58,6 @@ The diffusion process of our conditional framework.
 <p align = "center">
 computational process of long-axis attention
 </p>
-
-The technical supplement is as follows:
-
-https://github.com/musicai-cakecake/pop-diffuseq
 
 ## Objective evaluation:
 Model setting:
